@@ -1,0 +1,21 @@
+Package: exampackage
+Type: Package
+Title: Exam Package
+Version: 0.1.0
+Authors@R: c(
+    person(
+      "Johan", "Blixt Dackhammar",
+      email = "johan.blixt.dackhammar@ki.se",
+      role = c("aut", "cre")
+    )
+  )
+Description: This package is created as an examination in the intermediate R course.
+    The package includes functions for image filtering, a semantic algoritm and sliding window.
+    
+    
+License: MIT + file LICENSE
+Encoding: UTF-8
+LazyData: true
+Imports: 
+    magick,
+    stringr
