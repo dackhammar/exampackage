@@ -23,6 +23,6 @@ An image with applied conversions
 \description{
 This function is just for demonstration purposes and according to the instructions for the exam.
 I highly recommend not to use it.
-This per pixel iterative approach is O2 and slow. A vectorized approach is preferred.
+This per pixel iterative approach is O(^2) and slow. A vectorized approach is preferred.
 For a small image this is 100 times slower than the vectorized approach.
 }

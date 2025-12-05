@@ -22,5 +22,5 @@ A raw pixel with applied conversion
 }
 \description{
 This function is just for demonstration purposes and according to the instructions for the exam.
-This per pixel iterative approach is O2 and slow. A vectorized approach is preferred.
+This per pixel iterative approach is O(^2) and slow. A vectorized approach is preferred.
 }

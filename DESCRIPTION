@@ -10,11 +10,19 @@ Authors@R: c(
     )
   )
 Description: This package is created as an examination in the intermediate R course.
-    The package includes functions for image filtering `image_filter`, a semantic algoritm and sliding window.
+    The package includes functions for image filterin that can convert an image
+    to grayscale, apply a cutoff filter or filter out channels,  a semantic algoritm
+    which detects the mood of a text and a sliding window function to apply a filter
+    to accelerometer data and plot it.
 License: MIT + file LICENSE
+URL: https://github.com/dackhammar/exampackage
+BugReports:
+    https://github.com/dackhammar/exampackage/issues
 Encoding: UTF-8
 LazyData: true
+Depends:
+    R (>= 4.5)
 Imports: 
-    ggplot2,
-    magick
+    ggplot2 (>= 4.0.1),
+    magick (>= 2.9.0)
 RoxygenNote: 7.3.3
