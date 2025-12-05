@@ -59,6 +59,13 @@ image_to_cutoff <- function(image_path, output = "default", cutoff = 50) {
     cat("Input file does not exist.")
     return(invisible(NULL))
   }
+
+  # Make sure percent is valid
+  if(!cutoff %in% 0:100) {
+    cat("Cutoff must be 0 to 100.")
+    return(invisible(NULL))
+  }
+
   # If default input, add _grayscale to the input
   if (output == "default") {
     output <- sub("\\.(?=[A-Za-z]{3,4}$)", "_cutoff.", image_path, perl = TRUE)
@@ -106,6 +113,12 @@ convert_rgb <- function(image, conversion = c("grayscale", "red", "green", "blue
       cat("Input file does not exist.")
       return(invisible(NULL))
     }
+  }
+
+  # Make sure percent is valid
+  if(!percent %in% 0:100) {
+    cat("Percent must be 0 to 100.")
+    return(invisible(NULL))
   }
 
   conversion <- match.arg(conversion)
@@ -193,7 +206,12 @@ convert_grayscale <- function(image) {
 #'
 #' @returns A raw pixel with applied conversion
 modify_pixel <- function(pixel, conversion = c("grayscale", "red", "green", "blue","cutoff"), percent = 50) {
-  modification <- match.arg(modification)
+  # Make sure percent is valid
+  if(!percent %in% 0:100) {
+    cat("Percent must be 0 to 100.")
+    return(invisible(NULL))
+  }
+  conversion <- match.arg(conversion)
   rgb <- as.integer(pixel)
   r <- rgb[1]
   g <- rgb[2]
@@ -230,13 +248,18 @@ modify_pixel <- function(pixel, conversion = c("grayscale", "red", "green", "blu
 #'
 #' @returns An image with applied conversions
 iterative_converter <- function(image,conversion = c("grayscale", "red", "green", "blue","cutoff"), percent = 50) {
-  modification <- match.arg(modification)
+  conversion <- match.arg(conversion)
+  # Make sure percent is valid
+  if(!percent %in% 0:100) {
+    cat("Percent must be 0 to 100.")
+    return(invisible(NULL))
+  }
   bitmap <- image[[1]]
   h <- dim(bitmap)[2]
   w <- dim(bitmap)[3]
   for(i in seq_len(h)) {
     for(j in seq_len(w)) {
-      bitmap[,i,j] <- modify_pixel(bitmap[,i,j],modification)
+      bitmap[,i,j] <- modify_pixel(bitmap[,i,j],conversion)
     }
   }
   image <- magick::image_read(bitmap)
