@@ -10,12 +10,11 @@ Authors@R: c(
     )
   )
 Description: This package is created as an examination in the intermediate R course.
-    The package includes functions for image filtering, a semantic algoritm and sliding window.
-    
-    
+    The package includes functions for image filtering `image_filter`, a semantic algoritm and sliding window.
 License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
 Imports: 
-    magick,
-    stringr
+    ggplot2,
+    magick
+RoxygenNote: 7.3.3
