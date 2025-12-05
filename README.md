@@ -46,7 +46,7 @@ image_to_grayscale("image.jpg", "grayscale/image.jpg") # Outputs grayscale/image
 
 ``` r
 image_to_cutoff("image.jpg") # Outputs image_cutoff.jpg with cutoff at 50%
-image_to_cutoff("image.jpg", "cutoff/image.jpg") # Outputs cutoff/image.jpg with cutoff at 70%
+image_to_cutoff("image.jpg", "cutoff/image.jpg", cutoff = 70) # Outputs cutoff/image.jpg with cutoff at 70%
 ```
 
 `convert_rgb` is a helper function that takes a magick image or a filepath and outputs a magick image.
