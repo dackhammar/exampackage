@@ -216,7 +216,7 @@ modify_pixel <- function(pixel, conversion = c("grayscale", "red", "green", "blu
   r <- rgb[1]
   g <- rgb[2]
   b <- rgb[3]
-  switch(modification,
+  switch(conversion,
          grayscale = return(as.raw(rep(round(r * 0.299 + g * 0.587 + b * 0.114),3))),
          red = return(as.raw(c(r,0,0))),
          green = return(as.raw(c(0,g,0))),
