@@ -10,8 +10,15 @@ text_mood(text)
 \item{text}{Path to a text file}
 }
 \value{
-character string: "Text is positive :)", "neutral :|", or "negative :("
+Prints summary. Returns a list of ratio, positive and negative word counts.
 }
 \description{
-Text mood
+Detects the mood of the text
+}
+\examples{
+# Load test file
+text_file <- system.file("extdata", "testtext.txt", package = "exampackage")
+# Run function
+text_mood(text_file)
+
 }

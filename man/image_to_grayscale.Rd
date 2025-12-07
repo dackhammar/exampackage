@@ -17,3 +17,12 @@ a grayscale iamge
 \description{
 Converts an image to grayscale
 }
+\examples{
+# Load test image, you should use your own image
+image_file <- system.file("extdata", "testimage.jpg", package = "exampackage")
+# Temporary file for output
+output_file <- tempfile(fileext = ".jpg")
+# Apply grayscale function
+image_to_grayscale(image_file, output_file)
+
+}

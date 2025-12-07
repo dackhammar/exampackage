@@ -6,6 +6,14 @@
 #' @param image_path path to an image file
 #' @param output path to output file, defaults to input with added _grayscale
 #'
+#' @examples
+#' # Load test image, you should use your own image
+#' image_file <- system.file("extdata", "testimage.jpg", package = "exampackage")
+#' # Temporary file for output
+#' output_file <- tempfile(fileext = ".jpg")
+#' # Apply grayscale function
+#' image_to_grayscale(image_file, output_file)
+#'
 #' @returns a grayscale iamge
 #' @export
 image_to_grayscale <- function(image_path, output = "default"){
@@ -52,6 +60,17 @@ image_to_grayscale <- function(image_path, output = "default"){
 #' @param output path to output file, defaults to input with added _grayscale
 #'
 #' @returns image with cutoff applied
+#'
+#' @examples
+#' # Load test image, you should use your own image
+#' image_file <- system.file("extdata", "testimage.jpg", package = "exampackage")
+#' # Temporary file for output
+#' output_file <- tempfile(fileext = ".jpg")
+#' # Apply cutoff function
+#' image_to_cutoff(image_file,output_file)
+#' # Apply cutoff function with custom cutoff
+#' #' image_to_cutoff(image_file, output_file, cutoff = 30)
+#'
 #' @export
 image_to_cutoff <- function(image_path, output = "default", cutoff = 50) {
   # Check if input exists.
@@ -103,6 +122,17 @@ image_to_cutoff <- function(image_path, output = "default", cutoff = 50) {
 #' @param percent Percentage to use for cutoff
 #'
 #' @returns An image with applied conversions
+#'
+#' @examples
+#' # Load test image, you should use your own image
+#' image_file <- system.file("extdata", "testimage.jpg", package = "exampackage")
+#' # Apply grayscale conversion
+#' convert_rgb(image_file, conversion = "grayscale")
+#' # Apply cut-off filter
+#' convert_rgb(image_file, conversion = "cutoff")
+#' # Apply red filter
+#' convert_rgb(image_file, conversion = "red")
+#'
 #' @export
 convert_rgb <- function(image, conversion = c("grayscale", "red", "green", "blue", "cutoff"), percent = 50) {
   # Load image if it's a path

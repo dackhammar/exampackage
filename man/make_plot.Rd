@@ -28,3 +28,14 @@ Reads a source .csv containing at least time, x, y and z.
 Makes a combined acceleration vector using the eucledian method.
 Applies a sliding window filter to the plot using either mean or binary method
 }
+\examples{
+# Loading example data, you shoud use your own .csv file
+csv_file <- system.file("extdata", "testwindow.csv", package = "exampackage")
+# Plot with base settings
+make_plot(csv_file)
+# Threshold plot with adjusted window and threshold
+make_plot(csv_file, type = "threshold", windowsize = 500, threshold = 1)
+# Binary plot
+make_plot(csv_file, type = "binary", windowsize = 200)
+
+}

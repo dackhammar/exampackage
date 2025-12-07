@@ -39,6 +39,17 @@ combine_to_accvector <- function(sourcefile) {
 #' @param threshold threshold to apply (default = 0.5)
 #'
 #' @returns a plot
+#'
+#' @examples
+#' # Loading example data, you shoud use your own .csv file
+#' csv_file <- system.file("extdata", "testwindow.csv", package = "exampackage")
+#' # Plot with base settings
+#' make_plot(csv_file)
+#' # Threshold plot with adjusted window and threshold
+#' make_plot(csv_file, type = "threshold", windowsize = 500, threshold = 1)
+#' # Binary plot
+#' make_plot(csv_file, type = "binary", windowsize = 200)
+#'
 #' @export
 make_plot <- function(sourcefile, type = c("threshold", "binary"), windowsize = 1000, threshold = 0.5) {
   # Import and combine data

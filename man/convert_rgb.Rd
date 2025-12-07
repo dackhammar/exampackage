@@ -23,3 +23,14 @@ An image with applied conversions
 \description{
 Convert RGB
 }
+\examples{
+# Load test image, you should use your own image
+image_file <- system.file("extdata", "testimage.jpg", package = "exampackage")
+# Apply grayscale conversion
+convert_rgb(image_file, conversion = "grayscale")
+# Apply cut-off filter
+convert_rgb(image_file, conversion = "cutoff")
+# Apply red filter
+convert_rgb(image_file, conversion = "red")
+
+}

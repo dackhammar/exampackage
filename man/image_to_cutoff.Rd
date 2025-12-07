@@ -19,3 +19,14 @@ image with cutoff applied
 \description{
 Image to cutoff
 }
+\examples{
+# Load test image, you should use your own image
+image_file <- system.file("extdata", "testimage.jpg", package = "exampackage")
+# Temporary file for output
+output_file <- tempfile(fileext = ".jpg")
+# Apply cutoff function
+image_to_cutoff(image_file,output_file)
+# Apply cutoff function with custom cutoff
+#' image_to_cutoff(image_file, output_file, cutoff = 30)
+
+}
